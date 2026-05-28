@@ -90,7 +90,7 @@ body{
 
 .name{
     font-size:80px;
-    color:#b38b59;
+    color:#f0b772;
     font-weight:bold;
     opacity:0;
     font-family:"Aref Ruqaa", serif;
@@ -182,7 +182,7 @@ body{
     font-size:clamp(16px, 3vw, 34px);
     font-family:"Aref Ruqaa", serif;
 
-    color:#b38b59;
+    color:#f0c654;
 
     margin-top:10px;
 
