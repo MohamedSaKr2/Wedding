@@ -1,0 +1,429 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    overflow-x:hidden;
+    font-family:'Cairo',sans-serif;
+}
+
+/* =========================
+        OVERLAY
+========================= */
+
+.overlay{
+    position:fixed;
+    inset:0;
+
+    background:
+    linear-gradient(
+        135deg,
+        #03153f,
+        #073496,
+        #020817
+    );
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+
+    animation:hideOverlay 2s ease forwards;
+    animation-delay:3s;
+
+    z-index:9999;
+}
+
+/* Glow */
+.overlay::before{
+    content:"";
+    position:absolute;
+    width:600px;
+    height:600px;
+
+    background:radial-gradient(
+        rgba(212,175,55,.25),
+        transparent 70%
+    );
+
+    border-radius:50%;
+    filter:blur(50px);
+
+    animation:pulse 4s ease infinite;
+}
+
+/* Stars */
+.overlay::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background-image:radial-gradient(#d4af37 1px, transparent 1px);
+    background-size:50px 50px;
+
+    opacity:.15;
+
+    animation:stars 20s linear infinite;
+}
+
+/* =========================
+        CONTENT
+========================= */
+
+.content{
+    position:relative;
+    z-index:10;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+}
+
+/* =========================
+        NAMES
+========================= */
+
+.name{
+    font-size:80px;
+    color:#b38b59;
+    font-weight:bold;
+    opacity:0;
+    font-family:"Aref Ruqaa", serif;
+}
+
+/* Left / Right animation */
+.top{
+    transform:translateX(-120vw);
+    animation:slideRight 2s cubic-bezier(.19,1,.22,1) forwards;
+}
+
+.bottom{
+    transform:translateX(120vw);
+    animation:slideLeft 2s cubic-bezier(.19,1,.22,1) forwards;
+    animation-delay:.5s;
+}
+
+/* Sub text */
+.sub{
+    color:white;
+    letter-spacing:8px;
+    font-size:18px;
+    opacity:0;
+    animation:fadeUp 2s ease forwards;
+    animation-delay:2s;
+    font-family:"Dancing Script", cursive;
+}
+
+.sub2{
+    color:#b38b59;
+    letter-spacing:4px;
+    font-size:3rem;
+    opacity:0;
+    animation:fadeUp 2s ease forwards;
+    animation-delay:2s;
+    font-family:"Aref Ruqaa", serif;
+}
+
+/* =========================
+        HERO
+========================= */
+
+.hero{
+    width:100%;
+    height:100vh;
+
+    background-image:url("img/img2.png");
+    background-size:cover;
+    background-position:center;
+
+    position:relative;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* Dark overlay فوق الصورة */
+.hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.45);
+}
+
+/* النص */
+.hero-content{
+    position:relative;
+    z-index:2;
+
+    text-align:center;
+   color:white;
+
+    padding:20px;
+}
+
+/* العنوان */
+.hero-content h1{
+    font-size:clamp(32px, 6vw, 90px);
+    font-family:"Aref Ruqaa", serif;
+
+    text-shadow:0 0 20px rgba(255,215,0,0.6);
+
+    line-height:1.3;
+}
+/* النص الصغير */
+.hero-content p,
+.hero-content h2{
+    font-size:clamp(16px, 3vw, 34px);
+    font-family:"Aref Ruqaa", serif;
+
+    color:#b38b59;
+
+    margin-top:10px;
+
+    text-shadow:0 0 20px rgba(255,215,0,0.4);
+
+    line-height:1.5;
+}
+@media (max-width:768px){
+
+    .hero-content{
+        padding:10px;
+    }
+
+    .hero-content h1{
+        font-size:clamp(34px, 10vw, 55px);
+    }
+
+    .hero-content p,
+    .hero-content h2{
+        font-size:clamp(16px, 5vw, 24px);
+    }
+}
+
+/* =========================
+        ANIMATIONS
+========================= */
+
+@keyframes slideRight{
+    0%{transform:translateX(-120vw);opacity:0;}
+    70%{transform:translateX(40px);opacity:1;}
+    100%{transform:translateX(0);opacity:1;}
+}
+
+@keyframes slideLeft{
+    0%{transform:translateX(120vw);opacity:0;}
+    70%{transform:translateX(-40px);opacity:1;}
+    100%{transform:translateX(0);opacity:1;}
+}
+
+@keyframes fadeUp{
+    from{opacity:0;transform:translateY(20px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+@keyframes pulse{
+    0%,100%{transform:scale(1);}
+    50%{transform:scale(1.2);}
+}
+
+@keyframes stars{
+    from{background-position:0 0;}
+    to{background-position:0 1000px;}
+}
+
+@keyframes hideOverlay{
+    to{
+        opacity:0;
+        visibility:hidden;
+        pointer-events:none;
+    }
+}
+
+.hero2{
+    width:100%;
+    height:100vh;
+    text-align: center;
+    font-family:"Aref Ruqaa", serif;
+    font-size:clamp(24px, 4.5vw, 30px);
+    color:#092546;
+    /* background-color: #010f20; */
+    display:flex;
+    justify-content:center;
+    background:
+      linear-gradient(
+        to top,
+        rgba(1, 10, 32, 0.95),
+        rgba(1, 19, 61, 0.65),
+        rgba(2, 2, 2, 0.2)
+    );
+}
+
+.hero-content2{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    padding:100px;
+    
+}
+/* العنوان */
+
+/* .hero-content2 h1{
+    color:white;
+
+    font-size:clamp(35px,6vw,85px);
+
+    font-family:"Aref Ruqaa", serif;
+
+    text-shadow:0 0 20px rgba(255,215,0,.3);
+} */
+
+/* الخط المتدرج */
+
+.fade-line{
+    width:280px;
+    height:2px;
+
+    margin:15px auto 25px;
+
+    background:
+    linear-gradient(
+        to right,
+        transparent,
+        #eea84c,
+        transparent
+    );
+}
+
+/* الجملة */
+
+.date-text{
+    color:white;
+
+    font-size:clamp(16px,3.5vw,28px);
+
+    margin-bottom:25px;
+
+    font-family:"Aref Ruqaa", serif;
+}
+
+/* القلب والخطوط */
+
+.heart-lines{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+
+    margin-bottom:60px;
+}
+
+.heart-lines .line{
+    width:120px;
+    height:2px;
+
+    background:
+    linear-gradient(
+        to right,
+        transparent,
+        #eea84c,
+        transparent
+    );
+}
+
+.heart{
+    color:#eea84c;
+    font-size:22px;
+
+    animation:pulse 1.5s infinite;
+}
+
+/* العداد */
+
+.countdown{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+}
+
+/* المربعات */
+
+.box{
+    position:relative;
+
+    padding:40px 20px;
+
+    /* background:rgba(255,255,255,.03); */
+    background-color: #133968;
+
+    backdrop-filter:blur(10px);
+
+    border-radius:10px;
+
+    overflow:hidden;
+}
+
+/* الضلع العلوى فقط */
+
+.box::before{
+    content:"";
+
+    position:absolute;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:2px;
+
+    background:
+    linear-gradient(
+        to right,
+        transparent,
+        #eea84c,
+        transparent
+    );
+}
+
+.box h2{
+    color:white;
+
+    font-size:clamp(35px,5vw,70px);
+
+    font-family:"Aref Ruqaa", serif;
+}
+
+.box span{
+    color:#eea84c;
+
+    font-size:20px;
+
+    margin-top:10px;
+
+    display:block;
+
+    font-family:"Aref Ruqaa", serif;
+}
+
+/* موبايل */
+
+@media(max-width:768px){
+
+    .countdown{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .box{
+        padding:30px 10px;
+    }
+
+    .heart-lines .line{
+        width:70px;
+    }
+
+}

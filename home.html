@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&display=swap"
+  rel="stylesheet"
+>
+    <title>Wedding Invitation</title>
+</head>
+<body>
+
+    <!-- Overlay -->
+    <!-- <div class="overlay">
+
+    <div class="content">
+
+        <h1 class="name top" >
+            عَبْدُ الرَّحْمٰن 
+        </h1>
+        <h1 class="name top">
+            &
+        </h1>
+
+       
+
+        <h1 class="name bottom">
+           أَرْوَى
+        </h1>
+
+        <div class="sub">
+            WEDDING DAY
+        </div>
+        <div class="sub2">
+           ... اهلا بكم
+        </div>
+
+    </div>
+
+
+</div> -->
+<!-- End Overlay -->
+
+
+
+<!-- Hero Section 1-->
+<section class="hero">
+ <div class="hero-content">
+    <h2>اهلا بكم فى حفل زفافنا</h2><br>
+        <h1 data-aos="fade-up"
+     data-aos-duration="3000">عَبْدُ الرَّحْمٰن &nbsp; & &nbsp; أَرْوَى</h1>
+        <p>يسعدنا تشريفكم بحضور حفل زفافنا السعيد</p><br>
+        <h2 style="color: white;" data-aos="fade-up"
+     data-aos-duration="3000">حيث يلتقى الحب للأبد</h2><br><br>
+    </div>
+
+</section>
+
+<!-- end section -->
+
+<!-- start section 2 -->
+
+<section class="hero2">
+
+    <div class="hero-content2">
+
+        <h1 data-aos="fade-down"
+     data-aos-easing="linear"
+     data-aos-duration="1500">العد التنازلى</h1>
+
+        <!-- الخط -->
+        <div class="fade-line"></div>
+
+        <!-- الجملة -->
+        <p class="date-text" data-aos="fade-up"
+     data-aos-duration="3000">
+           كل ثانيه تقرب من يومنا
+        </p>
+
+        <!-- خطوط + قلب -->
+        <div class="heart-lines">
+
+            <span class="line left"></span>
+
+            <span class="heart">❤</span>
+
+            <span class="line right"></span>
+
+        </div>
+
+        <!-- العد التنازلى -->
+        <div class="countdown">
+
+            <div class="box"  data-aos="zoom-out-right">
+                <h2 id="months">00</h2>
+                <span>شهور</span>
+            </div>
+
+            <div class="box">
+                <h2 id="hours">00</h2>
+                <span>ساعات</span>
+            </div>
+
+           <div class="box" data-aos="fade-right">
+    <h2 id="minutes">00</h2>
+    <span>دقائق</span>
+</div>
+
+            <div class="box" data-aos="fade-left">
+                <h2 id="seconds">00</h2>
+                <span>ثوانى</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- end section 2 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+const weddingDate = new Date("September 1, 2026 00:00:00").getTime();
+
+const countdown = setInterval(() => {
+
+    const now = new Date().getTime();
+
+    const distance = weddingDate - now;
+
+    /* حساب الوقت */
+
+    const months = Math.floor(distance / (1000 * 60 * 60 * 24 * 30));
+
+      const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24))
+        / (1000 * 60 * 60)
+    );
+
+  const minutes = Math.floor(
+    (distance % (1000 * 60 * 60))
+    / (1000 * 60)
+);
+
+    const seconds = Math.floor(
+        (distance % (1000 * 60))
+        / 1000
+    );
+
+    /* عرض القيم */
+
+    document.getElementById("months").innerHTML = months;
+     document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+
+}, 1000);
+
+</script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</body>
+</html>

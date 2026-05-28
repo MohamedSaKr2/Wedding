@@ -1,0 +1,267 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ 
+   body{
+  background:#f8f5f0;
+  overflow:hidden;
+}
+/* نوع الخطوط */
+.ar-title{
+
+  font-family: "Marhey", sans-serif;
+
+}
+
+/* Overlay */
+.overlay{
+  position:fixed;
+  inset:0;
+  background:#00234E;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+    display:flex;
+  flex-direction:column;
+}
+
+.h2 h2{
+    color: #b38b59;
+}
+/* Circle */
+.circle{
+  width:160px;
+  height:160px;
+  border:3px solid #b38b59;
+  border-radius:50%;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  position:relative;
+}
+
+/* spinner element */
+.spinner{
+  position:absolute;
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  border:3px solid transparent;
+  border-top:3px solid #b38b59;
+}
+
+/* letters */
+.letters{
+  font-size:3rem;
+  color:#b38b59;
+
+  opacity:0;
+
+  transform: scale(0.5) translateY(20px);
+  font-family: "Dancing Script", cursive;
+  font-weight: 600;
+}
+
+h1{
+    font-family: "Dancing Script", cursive;
+  font-weight: 600;
+}
+
+
+
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* start section */
+
+
+.landing{
+  background-color: #052955;
+  width:100%;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+}
+
+/* envelope */
+
+.envelope{
+
+  width:400px;
+  height:250px;
+  background:#02397e;
+  border-radius:10px;
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  box-shadow:0 20px 40px rgba(0,0,0,.15);
+}
+
+/* top shape */
+
+.envelope::before{
+
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:0;
+
+  width:100%;
+  height:100%;
+
+  background:#010f20;
+
+  clip-path:polygon(0 0, 50% 55%, 100% 0);
+}
+
+/* white card */
+
+.invite-card{
+
+  width:280px;
+  height:180px;
+
+  background:white;
+
+  border-radius:10px;
+
+  position:absolute;
+
+  top:-40px;
+
+  z-index:2;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+/* text */
+
+.save{
+
+  color:#946221;
+  letter-spacing:3px;
+  margin-bottom:10px;
+  font-family: "Dancing Script", cursive;
+  
+}
+
+.invite-card h1{
+
+  color:#00234E;
+
+  font-size:2rem;
+}
+.invite-card p{
+  font-size: 1.2rem;
+  font-weight: bolder !important;
+}
+
+/* button */
+
+.open-btn{
+
+  position:absolute;
+
+  bottom:25px;
+
+  width:70px;
+  height:70px;
+
+  border:none;
+
+  border-radius:50%;
+
+  background:white;
+
+  color:#B88A4D;
+
+  font-size:24px;
+
+  z-index:3;
+
+  transition:.4s;
+}
+
+.open-btn:hover{
+
+  transform:scale(1.1);
+}
+
+/* =========================
+        Mobile
+========================= */
+
+@media(max-width:768px){
+
+  .envelope{
+
+    width:320px;
+    height:210px;
+
+  }
+
+  .invite-card{
+
+    width:230px;
+    height:150px;
+
+    top:-30px;
+
+  }
+
+  .invite-card h1{
+
+    font-size:1.5rem;
+
+  }
+
+  .save{
+
+    font-size:.9rem;
+
+    letter-spacing:2px;
+
+  }
+
+  .open-btn{
+
+    width:60px;
+    height:60px;
+
+    font-size:20px;
+
+    bottom:20px;
+
+  }
+
+}
+@media(max-width:400px){
+
+  .envelope{
+
+    width:280px;
+    height:190px;
+
+  }
+
+  .invite-card{
+
+    width:210px;
+
+  }
+
+}

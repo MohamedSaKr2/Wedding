@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- file css -->
+     <link rel="stylesheet" href="style.css">
+
+  <!-- Bootstrap -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+ 
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  >
+
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&display=swap"
+  rel="stylesheet"
+>
+<link
+  href="https://fonts.googleapis.com/css2?family=Marhey:wght@300;400;500;700&display=swap"
+  rel="stylesheet"
+>
+
+  <title>Wedding Invitation</title>
+
+  
+</head>
+<body>
+<!-- Overlay -->
+
+ 
+<div class="overlay">
+
+  <div class="circle">
+
+    <div class="spinner"></div>
+
+    <div class="letters">
+      A | A
+    </div>
+    
+
+  </div>
+
+  <div class="h2 ar-title"><br>
+    <h2> ...جارى التحضير </h2>
+ </div>
+
+</div>
+<!-- End Overlay -->
+
+<!-- Start section -->
+
+<section class="landing">
+
+  <div class="envelope">
+
+    <!-- الورقة البيضاء -->
+
+    <div class="invite-card">
+
+      <!-- <p class="save" >
+        Abd Elrahman & Arwa
+      </p> -->
+
+      <h1 style="font-weight: bold;">
+        1 Sep 2026
+      </h1>
+
+       <p class="save"  style="font-size: 1.6rem;">
+        Congratulations
+      </p>
+      
+
+    </div>
+   
+
+    <!-- زر القلب -->
+
+    <button class="open-btn" onclick="goToHome()">
+
+      <i class="fa-solid fa-heart"></i>
+
+    </button>
+
+  </div>
+   <div class="h2 ar-title"><br>
+    <h2>اضغط لفتح الدعوة</h2>
+ </div>
+
+</section>
+
+<!-- End section -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <script>
+
+function goToHome(){
+
+  window.location.href = "home.html";
+
+}
+window.onload = () => {
+
+  let tl = gsap.timeline();
+
+  // دوران كامل ناعم
+  tl.to(".spinner", {
+
+    rotation: 720,
+    duration: 2,
+    ease: "power2.inOut"
+
+  })
+
+  // اختفاء الـ spinner بسلاسة
+  .to(".spinner", {
+
+    opacity: 0,
+    scale: 1.4,
+    duration: 0.8,
+    ease: "power2.out"
+
+  }, "-=0.3")
+
+  // ظهور الحروف بشكل cinematic
+  .to(".letters", {
+
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    duration: 1,
+    ease: "expo.out"
+
+  }, "-=0.5")
+
+  // اختفاء الـ overlay بالكامل
+  .to(".overlay", {
+
+    opacity: 0,
+    duration: 1.5,
+    ease: "power2.inOut",
+
+    onComplete: () => {
+
+      document.querySelector(".overlay").style.display = "none";
+      document.body.style.overflow = "auto";
+
+    }
+
+  }, "+=0.6");
+
+};
+
+
+</script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+</script>
+
+
+</body>
+</html>
