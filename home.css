@@ -14,7 +14,7 @@ body{
     linear-gradient(
         to bottom,
 
-        #03153f 0%,
+        #123d74 0%,
         #041c4d 20%,
         #08284d 45%,
         #0b2f57 65%,
@@ -148,6 +148,15 @@ body{
         HERO
 ========================= */
 
+.heart-icon{
+    color:#eea84c;
+
+    font-size:22px;
+
+    animation:pulse 1.5s infinite;
+
+    text-shadow:0 0 15px rgba(238,168,76,.6);
+}
 .hero{
     width:100%;
      min-height:100vh;
@@ -169,7 +178,7 @@ body{
     content:"";
     position:absolute;
     inset:0;
-    background:rgba(0,0,0,0.45);
+    background:rgba(0,0,0,0.18);
 }
 
 /* النص */
